@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  fluent-bit:
+    image: fluent/fluent-bit:1.8.15
+    container_name: fluent-bit
+    restart: always
+    network_mode: host
+    volumes:
+    - ./conf/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf
+    - ./conf/parsers.conf:/fluent-bit/etc/parsers.conf
+    - ./conf/filter.lua:/fluent-bit/etc/filter.lua
+    - ./data:/data/db
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "5"

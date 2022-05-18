@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  uptime-kuma:
+    container_name: uptime-kuma
+    image: louislam/uptime-kuma:1.15.1
+    restart: always
+    network_mode: host
+    environment:
+      - TZ=Asia/Bangkok
+    volumes:
+      - ./data-uptime-kuma:/app/data

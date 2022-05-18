@@ -1,0 +1,20 @@
+version: '3'
+services:
+  dashboard:
+    image: opensearchproject/opensearch-dashboards:1.3.2
+    container_name: dashboard
+    restart: always
+    network_mode: host
+    environment:
+      OPENSEARCH_HOSTS: '["https://10.130.0.2:9200"]'
+      SERVER_HOST: 0.0.0.0
+      OPENSEARCH_USERNAME: admin
+      OPENSEARCH_PASSWORD: admin
+      opensearch.ssl.verificationMode: none
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5"
+        max-file: "100m"
+
+
