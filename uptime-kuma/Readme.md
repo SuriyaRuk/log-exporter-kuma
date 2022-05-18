@@ -1,7 +1,7 @@
-pg L4 2 host port 1337
-notify mail telegram
-kong 80 code 401  L7 http
-konga L4 L7 401
-caasandra l4
-opensearch L4 L4 /health GET /_cat/health?v=true
-app http https code xxxx L7 cert expire date
+- pg L4 2 host port 1337
+- notify mail telegram
+- kong 80 code 401  L7 http
+- konga L4 L7 401
+- caasandra l4
+- opensearch L4 L4 /health GET /_cat/health?v=true
+- app http https code xxxx L7 cert expire date
